@@ -1,0 +1,411 @@
+/* Font */
+.ibm-plex-mono-regular {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .ibm-plex-mono-medium {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 500;
+    font-style: normal;
+  }
+  .poppins-regular {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .poppins-semibold {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+  }
+  
+  .poppins-bold {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+    
+/* Colors */
+:root {
+    --blue: #005691;
+    --white: #FAFAFA;
+    }
+
+/*Scroll-Up Button*/
+#scrollUpBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--blue);
+    border: none;
+    border-radius: 50%;
+    padding: 5px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
+  }
+  
+  #scrollUpBtn img {
+    width: 30px; /* Adjust size as needed */
+    height: 30px; /* Adjust size as needed */
+  }
+  
+  #scrollUpBtn:hover {
+    transform: scale(1.1);
+  }
+  
+  #scrollUpBtn:focus {
+    outline: none;
+  }
+  
+/* Body */
+    html, body {
+        margin: auto;
+        padding: auto;
+        background-color: var(--white);
+        height: 100%;
+        scroll-behavior: smooth;
+    }
+    
+    .container {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      vertical-align: auto;
+    }
+
+    .landing-page {
+        width: auto;
+        color: var(--blue);
+    }
+
+    #JAMESRELOX {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 700;
+        font-size: 120px;
+        letter-spacing: -10px;
+        margin: 0;
+    }
+
+    #Multimedia-Artist {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 30px;
+        margin: 0;
+    }
+
+    /* Photo Section */
+
+    .container-photography {
+        position: relative;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        vertical-align: auto;
+      }
+
+    #Photography {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 18px;
+        font-weight: 400;
+        margin: 50px;
+        color: var(--blue);
+    }
+    
+    
+    .gallery-wrapper {
+      position: relative;
+      max-width: 100%;
+      margin: auto;
+  }
+  
+  .gallery-container {
+      display: flex;
+      flex-wrap: wrap; /* Allows items to wrap to the next row */
+      gap: 10px;
+      justify-content: center;
+      padding: 10px;
+  }
+  
+  .gallery-item {
+      flex: 1 1 calc(25% - 20px); /* Responsive item width (adjust %) */
+      max-width: calc(25% - 20px); /* Prevent growing too large */
+      scroll-snap-align: start;
+      overflow: hidden;
+      border-radius: 8px;
+      cursor: pointer;
+  }
+  
+  .gallery-item img {
+      width: 100%;
+      height: 100%; /* Ensures uniform height */
+      object-fit: cover; /* Crops images while maintaining aspect ratio */
+      transition: transform 0.3s ease;
+  }
+  
+  .gallery-item:hover img {
+      transform: scale(1.1); /* Zoom effect on hover */
+  }
+  
+  /* Media Queries for Responsiveness */
+  @media (max-width: 1200px) {
+      .gallery-item {
+          flex: 1 1 calc(33.33% - 20px); /* 3 items per row */
+          max-width: calc(33.33% - 20px);
+      }
+  }
+  
+  @media (max-width: 768px) {
+      .gallery-item {
+          flex: 1 1 calc(50% - 20px); /* 2 items per row */
+          max-width: calc(50% - 20px);
+      }
+  }
+  
+  @media (max-width: 480px) {
+      .gallery-item {
+          flex: 1 1 calc(100% - 20px); /* 1 item per row */
+          max-width: calc(100% - 20px);
+      }
+  }
+/* Lightbox Styles (from previous example) */
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 50px;
+    font-size: 24px;
+    color: #fff;
+    cursor: pointer;
+    z-index: 1100;
+    transition: transform 0.3s ease, color 0.3s ease; /* Add transition for color change */
+}
+
+.close-btn:hover {
+    transform: rotate(90deg) scale(2); /* Combine transform properties */
+    color: var(--blue); /* Example color change on hover */
+}
+
+
+/* Navigation Buttons */
+/* Buttons Styling */
+.nav-btn {
+    position: absolute;
+    top: 50%;
+    font-size: 0; /* Hide default text, only show icons */
+    background: var(--white);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1100;
+    border-radius: 100px;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nav-btn:hover {
+    color: var(--blue);
+    transform: scale(1.1); /* Subtle scaling effect */
+}
+
+.nav-btn.prev {
+    left: 20px;
+}
+
+.nav-btn.next {
+    right: 20px;
+}
+
+.material-symbols-outlined {
+    font-size: 24px; /* Icon size */
+    color: var(--blue); /* Default color */
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-btn:hover .material-symbols-outlined {
+    color: var(--blue); /* Change icon color */
+}
+/* About Me */
+.aboutme-container {
+    position: relative;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    vertical-align: auto;
+  }
+
+.about-me-section {
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 80vh;
+    height: 50vh;
+    font-family: "IBM Plex Mono", monospace;
+    margin-top: -100px;
+}
+
+.about-me-text {
+    color: var(--blue);
+}
+
+.me {
+    width: 350px;
+    height: 350px;
+    border: 1px solid #ccc;
+}
+
+
+/* Contact Section */
+
+.container-contact-sec {
+    height: auto;
+
+}
+
+.email-container {
+    position: relative;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    vertical-align: auto;
+    margin-top: -50px;
+  }
+
+.contact-page {
+    width: auto;
+    color: var(--blue);
+    margin-top: 150px;
+}
+
+#Email, #social {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 400;
+    font-size: 20px;
+    margin: 0;
+    color: var(--blue);
+}
+
+#Email-Address {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 22px;
+    font-weight: 500;
+    margin: 0;
+    cursor: text;
+    transition: transform 0.3s ease;
+}
+
+/* Contact Social Icons */
+
+.container-contact {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    vertical-align: auto;
+    margin: 0;
+}
+
+.container-contact {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    vertical-align: auto;
+}
+
+.socials-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    vertical-align: auto;
+    margin: 0;
+}
+
+.socials h2 {
+    font-size: 24px;
+    color: #003366;
+    margin-bottom: 20px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.social-icons a img {
+    width: 35px;
+    height: 35px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.social-icons a img:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+
+.contact-social-container {
+    padding: 100px;
+    margin-bottom: 100px;
+}
+
+/* Footer */
+
+
+.content {
+    flex: 1;
+    text-align: center;
+    padding: 20px;
+    margin: 0;
+}
+
+.footer {
+    font-family: "IBM Plex Mono", monospace;
+    text-align: center;
+    background-color: var(--blue);
+    color: var(--white);
+    padding: 10px 0;
+    position: relative;
+    width: 100%;
+    font-size: 14px;
+}
+  
